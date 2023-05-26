@@ -1,12 +1,12 @@
 const express = require('express')
 const router = express.Router()
 const JoiValidator = require('@/middlewares/joiValidator')
-const { findAllUserByPageSchema, findUserByIdSchema } = require('@/schemas/userSchema')
-const { findAllUserByPage, findUserById } = require('@/controllers/user.controller')
+const { findAllUserByPageDto, findUserByIdDto } = require('@/dto/user.dto')
+const userController = require('@/controllers/user.controller')
 
 /* GET users listing. */
-router.get('/', JoiValidator(findAllUserByPageSchema), findAllUserByPage)
+router.get('/', JoiValidator(findAllUserByPageDto), userController.findAllUserByPage)
 
-router.get('/:uid', JoiValidator(findUserByIdSchema), findUserById)
+router.get('/:uid', JoiValidator(findUserByIdDto), userController.findUserById)
 
 module.exports = router
