@@ -7,9 +7,7 @@ const mount = require('mount-routes')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
-const { requestElapsedTime, Result } = require('./middlewares/sendResult')
-const errorHandler = require('./middlewares/errorHandler')
-const cors = require('./middlewares/cors')
+const { cors, requestElapsedTime, Result, errorHandler } = require('./middlewares')
 
 const app = express()
 
@@ -37,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 mount(app, path.join(process.cwd(), '/routes'), true)
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     next(createError(404))
 })
 

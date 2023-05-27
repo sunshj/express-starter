@@ -1,18 +1,27 @@
-const User = require('../models/UserModel')
-const { Op } = require('sequelize')
+const { prisma } = require('@/prisma')
 
 async function findAllUserByPage(req, res) {
     const { page, size, query = '' } = req.query
-    const result = await User.findAll({
-        where: {
-            [Op.and]: {
-                userName: { [Op.like]: `%${query}%` },
-                isDel: '0'
-            }
+    const result = await prisma.user.findMany({
+        select: {
+            userId: true,
+            userName: true,
+            createdAt: true,
+            updatedAt: true,
         },
-        order: [['userId', 'DESC']],
-        limit: size,
-        offset: (page - 1) * size
+        where: {
+            userName: {
+                contains: query,
+            },
+            AND: {
+                isDel: false,
+            },
+        },
+        orderBy: {
+            userId: 'desc',
+        },
+        take: size,
+        skip: (page - 1) * size,
     })
     const total = await userTotalCount(query)
     res.sendSuccess({ result, total })
@@ -20,23 +29,31 @@ async function findAllUserByPage(req, res) {
 
 async function userTotalCount(query) {
     if (query) {
-        return await User.count({
+        return prisma.user.count({
             where: {
-                [Op.and]: {
-                    userName: { [Op.like]: `%${query}%` },
-                    isDel: '0'
-                }
-            }
+                userName: {
+                    contains: query,
+                },
+                AND: {
+                    isDel: false,
+                },
+            },
         })
     }
-    return await User.count({ where: { isDel: '0' } })
+    return prisma.user.count({ where: { isDel: false } })
 }
 
 async function findUserById(req, res) {
-    const { uid } = req.params
-    const user = await User.findByPk(uid).catch(err => res.sendFailed(err.message))
-    if (!user) return res.sendFailed('用户不存在')
-    res.sendSuccess(user)
+    try {
+        const { uid: userId } = req.params
+        const user = await prisma.user
+            .findUnique({ where: { userId } })
+            .catch((err) => res.sendFailed(err.message))
+        if (!user) return res.sendFailed('用户不存在')
+        res.sendSuccess(user)
+    } catch (e) {
+        res.sendFailed(e.message)
+    }
 }
 
 module.exports = { findAllUserByPage, findUserById }

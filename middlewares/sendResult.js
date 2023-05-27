@@ -1,10 +1,9 @@
-exports.requestElapsedTime = function(req, res, next) {
+function requestElapsedTime(req, res, next) {
     req.startHrTime = process.hrtime()
     next()
 }
 
-exports.Result = function(req, res, next) {
-
+function Result(req, res, next) {
     const elapsedHrTime = () => {
         const _elapsedHrTime = process.hrtime(req['startHrTime'])
         return _elapsedHrTime[0] * 1000 + _elapsedHrTime[1] / 1e6
@@ -28,3 +27,5 @@ exports.Result = function(req, res, next) {
 
     next()
 }
+
+module.exports = { requestElapsedTime, Result }
