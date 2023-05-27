@@ -1,6 +1,6 @@
 const Joi = require('joi')
 
-const JoiValidator = function(schemas, options = { strict: false }) {
+const JoiValidatorMiddleware = function(schemas, options = { strict: false }) {
     // 自定义校验选项
     // strict 自定义属性，默认不开启严格模式，会过滤掉那些未定义的参数项
     //        如果用户指定了 strict 的值为 true，则开启严格模式，此时不会过滤掉那些未定义的参数项
@@ -37,4 +37,4 @@ const JoiValidator = function(schemas, options = { strict: false }) {
     }
 }
 
-module.exports = JoiValidator
+module.exports = JoiValidatorMiddleware
