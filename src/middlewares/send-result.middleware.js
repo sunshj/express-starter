@@ -6,7 +6,7 @@ function requestElapsedTime(req, res, next) {
 function Result(req, res, next) {
     const elapsedHrTime = () => {
         const _elapsedHrTime = process.hrtime(req['startHrTime'])
-        return _elapsedHrTime[0] * 1000 + _elapsedHrTime[1] / 1e6
+        return parseFloat((_elapsedHrTime[0] * 1000 + _elapsedHrTime[1] / 1e6).toFixed(2))
     }
 
     res.sendSuccess = (data) => {

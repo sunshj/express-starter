@@ -1,4 +1,4 @@
-const app = require('../app')
+const app = require('../src/app')
 const debug = require('debug')('express-starter:server')
 const http = require('http')
 

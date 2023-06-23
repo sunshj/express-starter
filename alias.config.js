@@ -9,11 +9,11 @@ function resolve(dir) {
  * 需要手动指定:语言框架->Javascript->Webpack->手动到当前js文件
  */
 module.exports = {
-    context: path.resolve(__dirname, './'),
+    context: path.resolve(__dirname, './src'),
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
-            '@': resolve('')
-        }
-    }
+            '@': resolve('./src'),
+        },
+    },
 }

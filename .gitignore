@@ -1,4 +1,4 @@
 node_modules/
 .idea
-prisma/migrations
+src/prisma/migrations
 .env*

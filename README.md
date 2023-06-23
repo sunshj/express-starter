@@ -62,7 +62,7 @@
 
 4. 让 webstorm 辅助识别 module-alias 设置的别名
 
-    - 先在项目根目录下创建配置文件如`server.config.js`，并写入以下内容
+    - 先在项目根目录下创建配置文件如`alias.config.js`，并写入以下内容
 
         ```js
         const path = require('path')
