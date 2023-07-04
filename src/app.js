@@ -1,9 +1,7 @@
-require('module-alias/register')
-require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` })
 const createError = require('http-errors')
 const express = require('express')
 const favicon = require('serve-favicon')
-const mount = require('mount-routes')
+const { autoMount } = require('@sunshj/express-routes-mount')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
@@ -32,7 +30,7 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 // 路由自动挂载
-mount(app, path.join(__dirname, '/routes'), true)
+autoMount(app, path.join(__dirname, '/routes'), true)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
