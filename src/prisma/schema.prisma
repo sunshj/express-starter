@@ -12,7 +12,7 @@ datasource db {
 
 model User {
   userId    Int      @id @default(autoincrement())
-  userName  String   @db.VarChar(20) @unique
+  userName  String   @unique @db.VarChar(20)
   password  String   @db.VarChar(32)
   isDel     Boolean  @default(false)
   createdAt DateTime @default(now())

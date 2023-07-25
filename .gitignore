@@ -1,4 +1,4 @@
 node_modules/
 .idea
-src/prisma/migrations
 .env*
+.vercel
