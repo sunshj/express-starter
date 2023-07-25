@@ -8,78 +8,40 @@
     npm install
     ```
 
-2. 环境变量
-
-    .env.development 或 .env.production
+2. 环境变量 (.env)
 
     ```dotenv
-    DATABASE_URL="mysql://root:root@localhost:33
+    DATABASE_URL="mysql://user:pass@localhost:3306/test
     ```
-
+    
 3. 启动项目
 
     ```bash
-    # 开发环境启动
-    npm run start
-    # 生产环境启动
-    npm run start:prod
+    npm run dev
     ```
 
-## 二、其他配置
-
-### prisma 操作
+## 二、prisma 操作
 
 1. migrate
     ```bash
-    npx prisma migrate dev --name init
+    #本地迁移
+    npm run dev:migrate
     ```
 2. generate
     ```bash
-    npx prisma generate
+    npm run generate
     ```
 
-### Nodejs 开发引用路径使用别名
+## 三、支持部署到 vercel
 
-1. 安装 `module-alias`
+1. 安装vercel
 
-    ```bash
-    npm install module-alias --save
-    ```
+   ```
+   npm i -g vercel
+   ```
 
-2. package.json 里面配置一下**\_moduleAlias**项
+2. 部署
 
-    ```json
-    "_moduleAliases" : {
-      "@": "./"
-    }
-    ```
-
-3. 入口 app.js 第一行引用
-
-    ```js
-    require('module-alias/register')
-    ```
-
-4. 让 webstorm 辅助识别 module-alias 设置的别名
-
-    - 先在项目根目录下创建配置文件如`alias.config.js`，并写入以下内容
-
-        ```js
-        const path = require('path')
-
-        function resolve(dir) {
-            return path.join(__dirname, '.', dir)
-        }
-
-        module.exports = {
-            context: path.resolve(__dirname, './'),
-            resolve: {
-                extensions: ['.js', '.vue', '.json'],
-                alias: {
-                    '@': resolve(''),
-                },
-            },
-        }
-        ```
-
-    - 在 webstorm **设置**->**语言框架**->**Javascript**->**Webpack**->手动选择`server.config.js`配置文件
+   ```
+   npm run vercel-deploy
+   ```
