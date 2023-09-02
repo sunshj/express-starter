@@ -30,7 +30,12 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 // routes auto mount
-autoMount(app, path.join(__dirname, '/routes'), { logger: true })
+autoMount(app, path.join(__dirname, '/routes'), {
+    logger: {
+        enable: true,
+        baseUrl: 'http://127.0.0.1:3500',
+    },
+})
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
