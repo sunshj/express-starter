@@ -1,4 +1,4 @@
-const { prisma } = require('../prisma')
+const { prisma } = require('./prisma')
 const md5 = require('md5')
 
 async function findAllUserByPage(req, res) {

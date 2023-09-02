@@ -11,9 +11,9 @@
 2. 环境变量 (.env)
 
     ```dotenv
-    DATABASE_URL="mysql://user:pass@localhost:3306/test
+    DATABASE_URL="mysql://user:pass@localhost:3306/test"
     ```
-    
+
 3. 启动项目
 
     ```bash
@@ -34,14 +34,14 @@
 
 ## 三、支持部署到 vercel
 
-1. 安装vercel
+1. 安装 vercel
 
-   ```
-   npm i -g vercel
-   ```
+    ```
+    npm i -g vercel
+    ```
 
 2. 部署
 
-   ```
-   npm run vercel-deploy
-   ```
+    ```
+    npm run vercel-deploy
+    ```

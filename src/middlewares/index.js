@@ -1,5 +1,5 @@
-exports.cors = require('./cors.middleware')
-exports.errorHandler = require('./error-handler.middleware')
-exports.joiValidator = require('./joi-validator.middleware')
-exports.requestElapsedTime = require('./send-result.middleware').requestElapsedTime
-exports.Result = require('./send-result.middleware').Result
+exports.cors = require('./cors')
+exports.errorHandler = require('./error-handler')
+exports.joiValidator = require('./joi-validator')
+exports.requestElapsedTime = require('./send-result').requestElapsedTime
+exports.Result = require('./send-result').Result

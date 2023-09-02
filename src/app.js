@@ -29,7 +29,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
-// 路由自动挂载
+// routes auto mount
 autoMount(app, path.join(__dirname, '/routes'), { logger: true })
 
 // catch 404 and forward to error handler
