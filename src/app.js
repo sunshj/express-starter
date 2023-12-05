@@ -5,13 +5,13 @@ const { autoMount } = require('@sunshj/express-routes-mount')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
-const { cors, requestElapsedTime, Result, errorHandler } = require('./middlewares')
+const { cors, requestElapsedTime, PrettyResult, errorHandler } = require('./middlewares')
 
 const app = express()
 
-// sendResult format
+// PrettyResult
 app.use(requestElapsedTime)
-app.use(Result)
+app.use(PrettyResult)
 
 // 设置接口跨域
 app.all(/\/api\/*/, cors)
@@ -30,11 +30,12 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 // routes auto mount
-autoMount(app, path.join(__dirname, '/routes'), {
+autoMount(app, path.join(__dirname, '.'), {
     logger: {
         enable: true,
         baseUrl: 'http://127.0.0.1:3500',
     },
+    entryFileName: 'route.js',
 })
 
 // catch 404 and forward to error handler

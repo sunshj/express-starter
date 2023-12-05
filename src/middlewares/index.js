@@ -1,5 +1,12 @@
-exports.cors = require('./cors')
-exports.errorHandler = require('./error-handler')
-exports.joiValidator = require('./joi-validator')
-exports.requestElapsedTime = require('./send-result').requestElapsedTime
-exports.Result = require('./send-result').Result
+const cors = require('./cors')
+const errorHandler = require('./error-handler')
+const joiValidator = require('./joi-validator')
+const { requestElapsedTime, PrettyResult } = require('./send-result')
+
+module.exports = {
+    cors,
+    errorHandler,
+    joiValidator,
+    requestElapsedTime,
+    PrettyResult,
+}

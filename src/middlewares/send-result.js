@@ -3,7 +3,7 @@ function requestElapsedTime(req, res, next) {
     next()
 }
 
-function Result(req, res, next) {
+function PrettyResult(req, res, next) {
     const elapsedHrTime = () => {
         const _elapsedHrTime = process.hrtime(req['startHrTime'])
         return parseFloat((_elapsedHrTime[0] * 1000 + _elapsedHrTime[1] / 1e6).toFixed(2))
@@ -28,4 +28,4 @@ function Result(req, res, next) {
     next()
 }
 
-module.exports = { requestElapsedTime, Result }
+module.exports = { requestElapsedTime, PrettyResult }

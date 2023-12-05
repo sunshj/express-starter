@@ -1,4 +1,4 @@
-const { prisma } = require('./prisma')
+const { prisma } = require('../../prisma')
 const md5 = require('md5')
 
 async function findAllUserByPage(req, res) {
@@ -15,9 +15,7 @@ async function findAllUserByPage(req, res) {
                 userName: {
                     contains: query,
                 },
-                AND: {
-                    isDel: false,
-                },
+                isDel: false,
             },
             orderBy: {
                 userId: 'desc',
@@ -25,27 +23,18 @@ async function findAllUserByPage(req, res) {
             take: size,
             skip: (page - 1) * size,
         })
-        const total = await userTotalCount(query)
+        const total = await prisma.user.count({
+            where: {
+                isDel: false,
+                userName: {
+                    contains: query,
+                },
+            },
+        })
         res.sendSuccess({ result, total })
     } catch (e) {
         res.sendFailed(e.message)
     }
-}
-
-async function userTotalCount(query) {
-    if (query) {
-        return prisma.user.count({
-            where: {
-                userName: {
-                    contains: query,
-                },
-                AND: {
-                    isDel: false,
-                },
-            },
-        })
-    }
-    return prisma.user.count({ where: { isDel: false } })
 }
 
 async function findUserById(req, res) {
