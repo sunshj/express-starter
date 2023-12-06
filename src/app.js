@@ -5,16 +5,11 @@ const { autoMount } = require('@sunshj/express-routes-mount')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
-const { cors, requestElapsedTime, PrettyResult, errorHandler } = require('./middlewares')
+const { applyMiddlewares, errorHandler } = require('./middlewares')
 
 const app = express()
 
-// PrettyResult
-app.use(requestElapsedTime)
-app.use(PrettyResult)
-
-// 设置接口跨域
-app.all(/\/api\/*/, cors)
+applyMiddlewares(app)
 
 // favicon
 app.use(favicon(path.join(process.cwd(), '/public', 'favicon.ico')))
