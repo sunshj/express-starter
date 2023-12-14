@@ -25,7 +25,8 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 // routes auto mount
-autoMount(app, path.join(__dirname, '.'), {
+autoMount(app, {
+    path: path.join(__dirname, '.'),
     logger: {
         enable: true,
         baseUrl: 'http://127.0.0.1:3500',
