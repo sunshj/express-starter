@@ -12,10 +12,6 @@
     },
     "dependencies": {
         "@prisma/client": "^5.0.0",
-<<<<<<< HEAD
-=======
-        "@sunshj/express-routes-mount": "^1.1.9",
->>>>>>> 89fb66309e626ad0d79d3c7b5dbfd1e28fa40e14
         "@vercel/node": "^2.15.6",
         "cookie-parser": "~1.4.4",
         "debug": "~4.3.4",
