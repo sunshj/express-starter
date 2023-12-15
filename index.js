@@ -1,15 +1,18 @@
-const app = require('./src/app')
+const asyncApp = require('./src/app')
 const debug = require('debug')('express-starter:server')
 const http = require('http')
 
 const port = normalizePort(process.env.PORT || '3000')
-app.set('port', port)
+let server
 
-const server = http.createServer(app)
-
-server.listen(port, '127.0.0.1')
-server.on('error', onError)
-server.on('listening', onListening)
+async function startServer() {
+    const app = await asyncApp()
+    app.set('port', port)
+    server = http.createServer(app)
+    server.listen(port, '127.0.0.1')
+    server.on('error', onError)
+    server.on('listening', onListening)
+}
 
 function normalizePort(val) {
     const port = parseInt(val, 10)
@@ -50,3 +53,5 @@ function onListening() {
     const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port
     debug('Listening on ' + bind)
 }
+
+startServer()

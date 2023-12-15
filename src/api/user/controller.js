@@ -20,8 +20,8 @@ async function findAllUserByPage(req, res) {
             orderBy: {
                 userId: 'desc',
             },
-            take: size,
-            skip: (page - 1) * size,
+            take: Number(size),
+            skip: (Number(page) - 1) * Number(size),
         })
         const total = await prisma.user.count({
             where: {
@@ -39,8 +39,8 @@ async function findAllUserByPage(req, res) {
 
 async function findUserById(req, res) {
     try {
-        const { uid: userId } = req.params
-        const user = await prisma.user.findUnique({ where: { userId } })
+        const { id } = req.params
+        const user = await prisma.user.findUnique({ where: { userId: Number(id) } })
         if (!user) return res.sendFailed('用户不存在')
         res.sendSuccess(user)
     } catch (e) {
