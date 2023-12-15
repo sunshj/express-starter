@@ -1,3 +1,3 @@
 exports.GET = (req, res) => {
-    res.render('index', { title: 'Hello Express!', msg: 'Welcome to Express.js' })
+    res.send({ msg: 'Express API is work' })
 }
