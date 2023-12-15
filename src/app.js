@@ -25,6 +25,7 @@ async function main() {
     app.use(cookieParser())
     app.use(express.static(path.join(__dirname, 'public')))
 
+<<<<<<< HEAD
     // routes auto generate
     await setupRouter(app, {
         directory: path.join(__dirname, './api'),
@@ -34,6 +35,17 @@ async function main() {
             baseUrl: 'http://127.0.0.1:3000',
         },
     })
+=======
+// routes auto mount
+autoMount(app, {
+    path: path.join(__dirname, '.'),
+    logger: {
+        enable: true,
+        baseUrl: 'http://127.0.0.1:3500',
+    },
+    entryFileName: 'route.js',
+})
+>>>>>>> 89fb66309e626ad0d79d3c7b5dbfd1e28fa40e14
 
     // catch 404 and forward to error handler
     app.use(function (req, res, next) {
