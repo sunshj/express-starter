@@ -31,7 +31,7 @@ async function main() {
         ignoreFiles: ['**/*.ejs'],
         logger: {
             enable: true,
-            baseUrl: 'http://127.0.0.1:3000',
+            baseUrl: 'http://127.0.0.1:3500',
         },
     })
 
@@ -43,7 +43,9 @@ async function main() {
     // error handler
     app.use(errorHandler)
 
-    return app
+    app.listen(3500, () => {
+        console.log(`➜  Local:   http://localhost:3500`)
+    })
 }
 
-module.exports = main
+main()
