@@ -1,11 +1,14 @@
-const createError = require('http-errors')
+require('dotenv').config()
 const express = require('express')
 const favicon = require('serve-favicon')
+const createError = require('http-errors')
 const path = require('path')
 const { setupRouter } = require('express-filebased-routing')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const { applyMiddlewares, errorHandler } = require('./middlewares')
+
+const PORT = process.env.PORT || 3000
 
 async function main() {
     const app = express()
@@ -43,8 +46,8 @@ async function main() {
     // error handler
     app.use(errorHandler)
 
-    app.listen(3500, () => {
-        console.log(`➜  Local:   http://localhost:3500`)
+    app.listen(PORT, () => {
+        console.log(`➜  Local:   http://localhost:${PORT}`)
     })
 }
 
