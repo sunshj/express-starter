@@ -31,7 +31,6 @@ async function main() {
     // routes auto generate
     await setupRouter(app, {
         directory: path.join(__dirname),
-        ignoreFiles: ['**/*.ejs'],
         logger: {
             enable: true,
             baseUrl: 'http://127.0.0.1:3500',
