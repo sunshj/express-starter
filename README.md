@@ -31,17 +31,4 @@
     ```bash
     npm run generate
     ```
-
-## 三、支持部署到 vercel
-
-1. 安装 vercel
-
-    ```
-    npm i -g vercel
-    ```
-
-2. 部署
-
-    ```
-    npm run vercel-deploy
-    ```
+ 
