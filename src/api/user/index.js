@@ -1,7 +1,7 @@
-const userController = require('./controller')
+const userService = require('./service')
 const { joiValidator } = require('../../middlewares')
 const { findAllUserByPageDto, createUserDto } = require('./dto')
 
-exports.GET = [joiValidator(findAllUserByPageDto), userController.findAllUserByPage]
+exports.GET = [joiValidator(findAllUserByPageDto), userService.findAllUserByPage]
 
-exports.POST = [joiValidator(createUserDto), userController.create]
+exports.POST = [joiValidator(createUserDto), userService.create]

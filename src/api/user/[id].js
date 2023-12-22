@@ -1,5 +1,5 @@
 const { joiValidator } = require('../../middlewares')
-const userController = require('./controller')
+const userService = require('./service')
 const { findUserByIdDto } = require('./dto')
 
-exports.GET = [joiValidator(findUserByIdDto), userController.findUserById]
+exports.GET = [joiValidator(findUserByIdDto), userService.findUserById]
