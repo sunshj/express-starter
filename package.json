@@ -10,22 +10,22 @@
     },
     "dependencies": {
         "@prisma/client": "^5.0.0",
-        "cookie-parser": "~1.4.4",
+        "cookie-parser": "~1.4.6",
         "debug": "~4.3.4",
-        "dotenv": "^16.3.1",
+        "dotenv": "^16.3.2",
         "ejs": "3.1.7",
-        "express": "^4.18.2",
-        "express-filebased-routing": "^0.0.15",
+        "express": "^4.18.3",
+        "express-filebased-routing": "^0.0.18",
         "http-errors": "~1.6.3",
-        "joi": "^17.8.3",
+        "joi": "^17.8.4",
         "md5": "^2.3.0",
         "moment": "^2.29.4",
         "morgan": "~1.9.1",
         "serve-favicon": "^2.5.0"
     },
     "devDependencies": {
-        "nodemon": "^3.0.1",
-        "prettier": "^2.8.4",
+        "nodemon": "^3.0.3",
+        "prettier": "^2.8.8",
         "prisma": "^5.0.0"
     }
 }

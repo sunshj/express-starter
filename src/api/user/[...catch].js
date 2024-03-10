@@ -1,3 +1,5 @@
-exports.GET = (req, res) => {
-    res.send('user not found')
-}
+const { defineEventHandler } = require('express-filebased-routing')
+
+module.exports = defineEventHandler(() => {
+    return 'user not found!'
+})

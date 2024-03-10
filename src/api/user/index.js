@@ -1,7 +1,8 @@
 const userService = require('./service')
-const { joiValidator } = require('../../middlewares')
-const { findAllUserByPageDto, createUserDto } = require('./dto')
+const userDtoValidator = require('./dto')
+const { defineEventHandler } = require('express-filebased-routing')
 
-exports.GET = [joiValidator(findAllUserByPageDto), userService.findAllUserByPage]
-
-exports.POST = [joiValidator(createUserDto), userService.create]
+module.exports = defineEventHandler({
+    GET: [userDtoValidator.findAllUserByPage, userService.findAllUserByPage],
+    POST: [userDtoValidator.createUser, userService.create],
+})
