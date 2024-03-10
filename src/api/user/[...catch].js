@@ -1,5 +1,5 @@
 const { defineEventHandler } = require('express-filebased-routing')
 
-module.exports = defineEventHandler(() => {
+exports.ALL = defineEventHandler(() => {
     return 'user not found!'
 })
