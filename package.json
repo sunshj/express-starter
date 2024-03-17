@@ -15,7 +15,7 @@
         "dotenv": "^16.3.2",
         "ejs": "3.1.7",
         "express": "^4.18.3",
-        "express-filebased-routing": "^0.1.1",
+        "express-filebased-routing": "^0.1.4",
         "http-errors": "~1.6.3",
         "joi": "^17.8.4",
         "md5": "^2.3.0",
