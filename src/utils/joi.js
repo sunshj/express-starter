@@ -22,7 +22,7 @@ export const joiValidator = (schemas, options = { strict: false }) => {
       const { error, value } = schema.validate(req[key], validateOptions)
 
       if (error) {
-        res.sendBadRequest(error.details[0].message)
+        res.$badRequest(error.details[0].message)
         throw error
       } else {
         req[key] = value

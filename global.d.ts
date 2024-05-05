@@ -3,12 +3,16 @@ import 'express'
 declare global {
   namespace Express {
     interface Response {
-      sendSuccess: (data: any) => void
-      sendFailed: (message: string) => void
-      sendBadRequest: (message: string) => void
-      sendNotFound: (message: string) => void
-      sendValidateFailed: (message: string) => void
-      sendError: (code: number, message: string, data: any) => void
+      /** 200 */
+      $success: (data: any) => void
+      /** 500 */
+      $failed: (message: string) => void
+      /** 400 */
+      $badRequest: (message: string) => void
+      /** 404 */
+      $notFound: (message: string) => void
+      /** custom error */
+      $error: (code: number, message: string, data: any) => void
     }
   }
 }

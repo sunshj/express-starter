@@ -29,9 +29,9 @@ export const findAllByPage = defineEventHandler(async (req, res) => {
         username: { contains: query }
       }
     })
-    res.sendSuccess({ result, total })
+    res.$success({ result, total })
   } catch (error) {
-    res.sendFailed(error.message)
+    res.$failed(error.message)
   }
 })
 
@@ -39,10 +39,10 @@ export const findById = defineEventHandler(async (req, res) => {
   try {
     const { id } = req.params
     const user = await prisma.user.findUnique({ where: { id: Number(id) } })
-    if (!user) return res.sendFailed('用户不存在')
-    res.sendSuccess(exclude(user, ['password', 'isDel']))
+    if (!user) return res.$failed('用户不存在')
+    res.$success(exclude(user, ['password', 'isDel']))
   } catch (error) {
-    res.sendFailed(error.message)
+    res.$failed(error.message)
   }
 })
 
@@ -52,7 +52,7 @@ export const create = defineEventHandler(async (req, res) => {
     const existedUser = await prisma.user.findUnique({
       where: { username }
     })
-    if (existedUser) return res.sendFailed('用户已存在')
+    if (existedUser) return res.$failed('用户已存在')
     const user = await prisma.user.create({
       data: {
         username,
@@ -60,8 +60,8 @@ export const create = defineEventHandler(async (req, res) => {
         password: md5(password)
       }
     })
-    res.sendSuccess(exclude(user, ['password', 'isDel']))
+    res.$success(exclude(user, ['password', 'isDel']))
   } catch (error) {
-    res.sendFailed(error.message)
+    res.$failed(error.message)
   }
 })
