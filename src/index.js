@@ -6,7 +6,7 @@ import favicon from 'serve-favicon'
 import { setupRouter } from 'express-filebased-routing'
 import logger from 'morgan'
 import { cors } from './middlewares/cors.js'
-import { PrettyResult, requestElapsedTime } from './middlewares/pretty-result.js'
+import { prettyResult, requestElapsedTime } from './middlewares/pretty-result.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
@@ -14,7 +14,7 @@ const app = express()
 async function main() {
   // middlewares
   app.use(requestElapsedTime)
-  app.use(PrettyResult)
+  app.use(prettyResult)
   app.all(/\/api\/*/, cors)
 
   // favicon
