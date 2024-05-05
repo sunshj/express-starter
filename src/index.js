@@ -3,12 +3,10 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import express from 'express'
 import favicon from 'serve-favicon'
-import createError from 'http-errors'
 import { setupRouter } from 'express-filebased-routing'
 import logger from 'morgan'
 import { cors } from './middlewares/cors.js'
-import { errorHandler } from './middlewares/error-handler.js'
-import { PrettyResult, requestElapsedTime } from './middlewares/send-result.js'
+import { PrettyResult, requestElapsedTime } from './middlewares/pretty-result.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
@@ -42,14 +40,6 @@ async function main() {
       baseUrl: `http://127.0.0.1:${app.get('port')}`
     }
   })
-
-  // catch 404 and forward to error handler
-  app.use((req, res, next) => {
-    next(createError(404))
-  })
-
-  // error handler
-  app.use(errorHandler)
 
   app.listen(app.get('port'), () => {
     console.log(`➜  Local:   http://127.0.0.1:${app.get('port')}`)
