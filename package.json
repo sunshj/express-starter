@@ -1,0 +1,45 @@
+{
+  "name": "express-starter",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "dev:migrate": "prisma migrate dev --name init",
+    "deploy:migrate": "prisma migrate deploy",
+    "generate": "prisma generate",
+    "lint": "eslint src",
+    "format": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.13.0",
+    "dotenv": "^16.3.2",
+    "ejs": "3.1.7",
+    "express": "^4.18.3",
+    "express-filebased-routing": "^0.1.16",
+    "http-errors": "~1.6.3",
+    "joi": "^17.8.4",
+    "md5": "^2.3.0",
+    "moment": "^2.29.4",
+    "morgan": "~1.9.1",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "@sunshj/eslint-config": "^1.0.6",
+    "@sunshj/prettier-config": "^1.0.0",
+    "eslint": "^8.57.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.2",
+    "nodemon": "^3.0.3",
+    "prettier": "^2.8.8",
+    "prisma": "^5.13.0"
+  },
+  "prettier": "@sunshj/prettier-config",
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}
