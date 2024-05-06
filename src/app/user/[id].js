@@ -1,6 +1,6 @@
 import { defineEventHandler } from 'express-filebased-routing'
-import { findById } from './service.js'
-import { findUserByIdDto } from './dto.js'
+import { findById } from './service'
+import { findUserByIdDto } from './dto'
 
 export default defineEventHandler({
   GET: [findUserByIdDto, findById]

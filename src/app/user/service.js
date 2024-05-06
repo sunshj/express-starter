@@ -1,6 +1,6 @@
 import md5 from 'md5'
 import { defineEventHandler } from 'express-filebased-routing'
-import { exclude, prisma } from '../../utils/prisma.js'
+import { exclude, prisma } from '../../utils/prisma'
 
 export const findAllByPage = defineEventHandler(async (req, res) => {
   try {

@@ -3,8 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "^18.15.0"
+  },
   "scripts": {
-    "dev": "nodemon src/index.js",
+    "dev": "node --watch --es-module-specifier-resolution=node src",
+    "start": "node --es-module-specifier-resolution=node src",
     "dev:migrate": "prisma migrate dev --name init",
     "deploy:migrate": "prisma migrate deploy",
     "generate": "prisma generate",
@@ -32,7 +36,6 @@
     "eslint": "^8.57.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.2",
-    "nodemon": "^3.0.3",
     "prettier": "^2.8.8",
     "prisma": "^5.13.0"
   },

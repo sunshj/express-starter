@@ -1,4 +1,4 @@
-import { createDtoValidator } from '../../utils/joi.js'
+import { createDtoValidator } from '../../utils/joi'
 
 export const findAllUserByPageDto = createDtoValidator(joi => ({
   query: {

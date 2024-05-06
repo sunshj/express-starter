@@ -5,8 +5,8 @@ import express from 'express'
 import favicon from 'serve-favicon'
 import { setupRouter } from 'express-filebased-routing'
 import logger from 'morgan'
-import { cors } from './middlewares/cors.js'
-import { prettyResult, requestElapsedTime } from './middlewares/pretty-result.js'
+import { cors } from './middlewares/cors'
+import { prettyResult, requestElapsedTime } from './middlewares/pretty-result'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()

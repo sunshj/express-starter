@@ -1,6 +1,6 @@
 import { defineEventHandler } from 'express-filebased-routing'
-import { create, findAllByPage } from './service.js'
-import { createUserDto, findAllUserByPageDto } from './dto.js'
+import { create, findAllByPage } from './service'
+import { createUserDto, findAllUserByPageDto } from './dto'
 
 export default defineEventHandler({
   GET: [findAllUserByPageDto, findAllByPage],
