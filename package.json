@@ -6,8 +6,11 @@
   "engines": {
     "node": "^18.15.0"
   },
+  "imports": {
+    "#*": "./src/*"
+  },
   "scripts": {
-    "dev": "node --watch --es-module-specifier-resolution=node src",
+    "dev": "node --es-module-specifier-resolution=node --watch src",
     "start": "node --es-module-specifier-resolution=node src",
     "dev:migrate": "prisma migrate dev --name init",
     "deploy:migrate": "prisma migrate deploy",
@@ -45,5 +48,8 @@
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "aliases": {
+    "@/": "./src/"
   }
 }
