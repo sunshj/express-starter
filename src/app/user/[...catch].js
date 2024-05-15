@@ -1,5 +1,3 @@
-import { defineEventHandler } from 'express-filebased-routing'
-
-export const ALL = defineEventHandler((req, res) => {
+export default defineEventHandler((req, res) => {
   res.$notFound('user not found')
 })

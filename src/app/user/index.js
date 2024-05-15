@@ -1,4 +1,3 @@
-import { defineEventHandler } from 'express-filebased-routing'
 import { create, findAllByPage } from './service'
 import { createUserDto, findAllUserByPageDto } from './dto'
 
