@@ -35,7 +35,6 @@ async function main() {
       '/api': ['src/app/user/**']
     },
     logger: {
-      enable: true,
       baseUrl: `http://127.0.0.1:${app.get('port')}`
     }
   })
