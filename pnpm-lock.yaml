@@ -18,8 +18,8 @@ dependencies:
     specifier: ^4.18.3
     version: 4.19.2
   express-filebased-routing:
-    specifier: ^0.1.20
-    version: 0.1.20(express@4.19.2)
+    specifier: ^0.1.22
+    version: 0.1.22(express@4.19.2)
   joi:
     specifier: ^17.8.4
     version: 17.13.1
@@ -1680,8 +1680,8 @@ packages:
       strip-final-newline: 3.0.0
     dev: true
 
-  /express-filebased-routing@0.1.20(express@4.19.2):
-    resolution: {integrity: sha512-/WMlE6WdLbfc6JzG0ZOPPwiNWHoFZ7FaSKMbhJW1bt0KFOr8UbW1Bh0sh/XeuTE/4RrzU9jH2Ev9cyNoE55eXQ==}
+  /express-filebased-routing@0.1.22(express@4.19.2):
+    resolution: {integrity: sha512-oMCUscHbGc7MovRnX/KovQL6z5KbCF3UYEeD4qOjjNO2n2dnFvWyW8uueStGqPpX2KQF4AKtDfVPHfo/d5yOfw==}
     peerDependencies:
       express: '>=4.0.0'
     dependencies:
