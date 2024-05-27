@@ -1,6 +1,4 @@
-import { defineEventHandler } from 'express-filebased-routing'
-
-export const cors = defineEventHandler((req, res, next) => {
+export const cors = (req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
   res.header(
     'Access-Control-Allow-Headers',
@@ -11,4 +9,4 @@ export const cors = defineEventHandler((req, res, next) => {
 
   if (req.method === 'OPTIONS') res.sendStatus(200)
   else next()
-})
+}

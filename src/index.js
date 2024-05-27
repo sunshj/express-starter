@@ -3,7 +3,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import express from 'express'
 import favicon from 'serve-favicon'
-import { setupRouter } from 'express-filebased-routing'
+import { presetExpress, setupRouter } from 'setup-router'
 import logger from 'morgan'
 import { cors, prettyResult, requestElapsedTime } from '#middlewares'
 
@@ -28,15 +28,19 @@ async function main() {
   app.use(express.urlencoded({ extended: false }))
   app.use(express.static(path.join(__dirname, 'public')))
 
-  // routes auto generate
-  await setupRouter(app, {
+  await setupRouter({
     directory: path.join(__dirname, './app'),
-    globalPrefix: {
-      '/api': ['src/app/user/**']
-    },
-    logger: {
-      baseUrl: `http://127.0.0.1:${app.get('port')}`
-    }
+    dotNesting: true,
+    plugins: [
+      presetExpress(app, {
+        prefixes: {
+          '/api': ['src/app/user/**']
+        },
+        logger: {
+          baseUrl: `http://127.0.0.1:${app.get('port')}`
+        }
+      })
+    ]
   })
 
   app.listen(app.get('port'), () => {
