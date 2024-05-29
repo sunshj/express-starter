@@ -1,5 +1,4 @@
 import 'express'
-import 'express-filebased-routing/global'
 
 declare global {
   namespace Express {

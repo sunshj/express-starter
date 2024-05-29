@@ -1,11 +1,9 @@
-import { defineEventHandler } from 'express-filebased-routing'
-
-export const requestElapsedTime = defineEventHandler((req, res, next) => {
+export const requestElapsedTime = (req, res, next) => {
   req.startHrTime = process.hrtime()
   next()
-})
+}
 
-export const prettyResult = defineEventHandler((req, res, next) => {
+export const prettyResult = (req, res, next) => {
   const getElapsedTime = () => {
     const _elapsedHrTime = process.hrtime(req.startHrTime)
     return Number.parseFloat((_elapsedHrTime[0] * 1000 + _elapsedHrTime[1] / 1e6).toFixed(2))
@@ -32,4 +30,4 @@ export const prettyResult = defineEventHandler((req, res, next) => {
   }
 
   next()
-})
+}

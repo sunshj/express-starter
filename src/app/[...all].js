@@ -1,3 +1,3 @@
-export default defineEventHandler((req, res) => {
+export default (req, res) => {
   res.$notFound('404 not found')
-})
+}

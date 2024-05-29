@@ -1,3 +1,3 @@
-export default defineEventHandler(() => {
-  return 'Express.js API is working fine'
-})
+export default (req, res) => {
+  res.send('Express.js API is working fine')
+}

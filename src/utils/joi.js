@@ -3,15 +3,17 @@ import joi from 'joi'
 const schemaKeys = ['params', 'query', 'body']
 
 /**
- * @param {Record<string, import('joi').Schema>} schemas
- * @param {import('joi').ValidationOptions} options
+ * @typedef {Partial<Record<'query' | 'body' | 'params', Record<string, import('joi').Schema>>>} Schemas
+ * @typedef {import('joi').ValidationOptions & {strict?:boolean}} ValidatorOptions
+ * @param {Schemas} schemas
+ * @param {ValidatorOptions} [options]
  * @returns {import('express').Handler}
  */
 export const joiValidator = (schemas, options = { strict: false }) => {
-  let validateOptions = { allowUnknown: true, stripUnknown: true }
+  const validateOptions = { allowUnknown: true, stripUnknown: true }
   if (!options.strict) {
     const { strict, ...rest } = options
-    validateOptions = { allowUnknown: true, stripUnknown: true, ...rest }
+    Object.assign(validateOptions, rest)
   }
 
   return (req, res, next) => {
@@ -34,9 +36,8 @@ export const joiValidator = (schemas, options = { strict: false }) => {
 }
 
 /**
- * @typedef {{import('joi').Schema}} Schema
- * @param {(joi:import('joi').Root)=>{query?:Record<string,Schema>; body?:Record<string,Schema>;params?:Record<string,Schema>;}} schemaFn
- * @param {import('joi').ValidationOptions } options
+ * @param {(joi:import('joi').Root)=>Schemas} schemaFn
+ * @param {ValidatorOptions} [options]
  */
 export function createDtoValidator(schemaFn, options) {
   return joiValidator(schemaFn(joi), options)
