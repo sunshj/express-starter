@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node --no-warnings --watch --es-module-specifier-resolution=node src",
+    "dev": "node --no-warnings --es-module-specifier-resolution=node --watch src",
     "start": "node --es-module-specifier-resolution=node src",
     "dev:migrate": "prisma migrate dev --name init",
     "deploy:migrate": "prisma migrate deploy",
@@ -22,7 +22,7 @@
     "moment": "^2.29.4",
     "morgan": "~1.9.1",
     "serve-favicon": "^2.5.0",
-    "setup-router": "^0.1.4"
+    "setup-router": "^0.1.5"
   },
   "devDependencies": {
     "@sunshj/eslint-config": "^1.0.6",

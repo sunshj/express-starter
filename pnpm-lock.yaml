@@ -33,8 +33,8 @@ dependencies:
     specifier: ^2.5.0
     version: 2.5.0
   setup-router:
-    specifier: ^0.1.4
-    version: 0.1.4
+    specifier: ^0.1.5
+    version: 0.1.5
 
 devDependencies:
   '@sunshj/eslint-config':
@@ -906,6 +906,13 @@ packages:
       restore-cursor: 4.0.0
     dev: true
 
+  /cli-table@0.3.11:
+    resolution: {integrity: sha512-IqLQi4lO0nIB4tcdTpN4LCB9FI3uqrJZK7RC515EnhZ6qBaglkIgICb1wjeAqpdoOabm1+SuQtkXIPdYC93jhQ==}
+    engines: {node: '>= 0.2.0'}
+    dependencies:
+      colors: 1.0.3
+    dev: false
+
   /cli-truncate@4.0.0:
     resolution: {integrity: sha512-nPdaFdQ0h/GEigbPClz11D0v/ZJEwxmeVZGeMo3Z5StPtUTkA9o1lD6QwoirYiSDzbcwn2XcjwmCp68W1IS4TA==}
     engines: {node: '>=18'}
@@ -936,6 +943,11 @@ packages:
   /colorette@2.0.20:
     resolution: {integrity: sha512-IfEDxwoWIjkeXL1eXcDiow4UbKjhLdq6/EuSVR9GMN7KVH3r9gQ83e73hsz1Nd1T3ijd5xv1wcWRYO+D6kCI2w==}
     dev: true
+
+  /colors@1.0.3:
+    resolution: {integrity: sha512-pFGrxThWcWQ2MsAz6RtgeWe4NK2kUE1WfsrvvlctdII745EW9I0yflqhe7++M5LEc7bV2c/9/5zc8sFcpL0Drw==}
+    engines: {node: '>=0.1.90'}
+    dev: false
 
   /commander@11.1.0:
     resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
@@ -3242,17 +3254,18 @@ packages:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
     dev: false
 
-  /setup-router-shared@0.1.4:
-    resolution: {integrity: sha512-2T0VN3BNFj+RT80PMkV48SrFyvWfHPgNQB5lXGpuJB5DyPpk2UM45mZIBpb2KbAJ99vyeM0ESgjFBAjZW2t43Q==}
+  /setup-router-shared@0.1.5:
+    resolution: {integrity: sha512-gSNWLIlwk0SR+6RRTzsh5ospz/RbbY1//vXwUg0JciHupzTeruPJ3nRxmIVdC/2oLoIeRY9L4In5sj7GlSE9mg==}
     dependencies:
+      cli-table: 0.3.11
       fast-glob: 3.3.2
     dev: false
 
-  /setup-router@0.1.4:
-    resolution: {integrity: sha512-jwiZKyWt4hyXO8sx8tWa4QwGwrqeZXCC8dq+7umSlsbyLAhEoC5vALE+HmwFBiOFZ8zYiypsqvZGLbcGNmK18Q==}
+  /setup-router@0.1.5:
+    resolution: {integrity: sha512-6rZJwV12r9qrkFCnLoOHIKlFhDSbfSNT8EowJkWOPK1FGpC4jtKQnm1n6RUeILaGnll37JH7zOdmHgEKEZ6beg==}
     dependencies:
       consola: 3.2.3
-      setup-router-shared: 0.1.4
+      setup-router-shared: 0.1.5
     dev: false
 
   /shebang-command@2.0.0:
