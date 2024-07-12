@@ -1,2 +1,2 @@
-export * from './joi'
 export * from './prisma'
+export * from './validator'

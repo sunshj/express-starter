@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 import express from 'express'
 import favicon from 'serve-favicon'
 import { setupRouter } from 'setup-router'
-import { presetExpress } from 'setup-router/presets/express'
+import { presetExpress } from 'setup-router/preset-express'
 import logger from 'morgan'
 import { cors, prettyResult, requestElapsedTime } from '#middlewares'
 

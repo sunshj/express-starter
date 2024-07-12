@@ -17,6 +17,9 @@ dependencies:
   express:
     specifier: ^4.18.3
     version: 4.19.2
+  express-validate-kit:
+    specifier: ^0.0.3
+    version: 0.0.3
   joi:
     specifier: ^17.8.4
     version: 17.13.1
@@ -33,8 +36,8 @@ dependencies:
     specifier: ^2.5.0
     version: 2.5.0
   setup-router:
-    specifier: ^0.1.5
-    version: 0.1.5
+    specifier: ^0.1.8
+    version: 0.1.8
 
 devDependencies:
   '@sunshj/eslint-config':
@@ -1685,6 +1688,11 @@ packages:
       strip-final-newline: 3.0.0
     dev: true
 
+  /express-validate-kit@0.0.3:
+    resolution: {integrity: sha512-rcSb8/V/wQWYSYft7zfi/WLbcxMUfmMFcIHdlmswlKLLKBHYm1DxvEl/g9tNrDLIl+LWEVjSpvSyEL0KlGzBQA==}
+    engines: {node: '>= 18'}
+    dev: false
+
   /express@4.19.2:
     resolution: {integrity: sha512-5T6nhjsT+EOMzuck8JjBHARTHfMht0POzlA60WV2pMD3gyXw2LZnZ+ueGdNxG+0calOJcWKbpFcuzLZ91YWq9Q==}
     engines: {node: '>= 0.10.0'}
@@ -3254,18 +3262,18 @@ packages:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
     dev: false
 
-  /setup-router-shared@0.1.5:
-    resolution: {integrity: sha512-gSNWLIlwk0SR+6RRTzsh5ospz/RbbY1//vXwUg0JciHupzTeruPJ3nRxmIVdC/2oLoIeRY9L4In5sj7GlSE9mg==}
+  /setup-router-shared@0.1.8:
+    resolution: {integrity: sha512-ODXfX7a1Xghl4Lc+7FeVZ2CocHhnubJ7q9OvGNMzk/yVJsufA95SFq+yHJPdlHyCT/Lvb3DOSYd9r1jKwBrnKA==}
     dependencies:
       cli-table: 0.3.11
       fast-glob: 3.3.2
     dev: false
 
-  /setup-router@0.1.5:
-    resolution: {integrity: sha512-6rZJwV12r9qrkFCnLoOHIKlFhDSbfSNT8EowJkWOPK1FGpC4jtKQnm1n6RUeILaGnll37JH7zOdmHgEKEZ6beg==}
+  /setup-router@0.1.8:
+    resolution: {integrity: sha512-+BCBzFXJdrMPPQswbHM8flxeRNcgVbCjNDm5fQMk3c/coKiHaqs8k5L9vIhJxDAYVC1TcHwGhsL4sN3E73V6tA==}
     dependencies:
       consola: 3.2.3
-      setup-router-shared: 0.1.5
+      setup-router-shared: 0.1.8
     dev: false
 
   /shebang-command@2.0.0:
