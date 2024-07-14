@@ -1,10 +1,25 @@
 <html>
-    <head>
-        <title><%= title %></title>
-        <link rel="stylesheet" href="/stylesheets/style.css" />
-    </head>
-    <body>
-        <h1><%= title %></h1>
-        <p><%= msg %></p>
-    </body>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p><%= msg %></p>
+
+    <ul id="routes"></ul>
+
+    <script>
+      const routesEl = document.getElementById('routes')
+      fetch('/__routes')
+        .then(r => r.json())
+        .then(routes => {
+          routesEl.innerHTML = routes
+            .map(route => {
+              return `<li>${route.method} <a href="${route.url}">${route.url}</a></li>`
+            })
+            .join('\n')
+        })
+    </script>
+  </body>
 </html>

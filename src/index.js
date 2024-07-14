@@ -33,6 +33,15 @@ async function main() {
     directory: path.join(__dirname, './app'),
     dotNesting: true,
     plugins: [
+      {
+        id: 'before-route-mount',
+        extendRoutes(ctx, routes) {
+          app.get(
+            '/__routes',
+            eventHandler(() => routes)
+          )
+        }
+      },
       presetExpress(app, {
         prefixes: {
           '/api': ['src/app/user/**']

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "moduleResolution": "Bundler",
-    "module": "ES2015",
+    "module": "ES2020",
     "paths": {
       "#*": ["./src/*"]
     }

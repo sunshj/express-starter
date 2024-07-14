@@ -18,8 +18,8 @@ dependencies:
     specifier: ^4.18.3
     version: 4.19.2
   express-validate-kit:
-    specifier: ^0.0.4
-    version: 0.0.4
+    specifier: ^0.0.6
+    version: 0.0.6
   joi:
     specifier: ^17.8.4
     version: 17.13.1
@@ -36,8 +36,8 @@ dependencies:
     specifier: ^2.5.0
     version: 2.5.0
   setup-router:
-    specifier: ^0.1.8
-    version: 0.1.8
+    specifier: ^0.1.10
+    version: 0.1.10
 
 devDependencies:
   '@sunshj/eslint-config':
@@ -1688,8 +1688,8 @@ packages:
       strip-final-newline: 3.0.0
     dev: true
 
-  /express-validate-kit@0.0.4:
-    resolution: {integrity: sha512-cAYqij+xS97p8sAWi4VR03SdYS+mcl2RNQ381qk4q0Q2FmnUlW4BYri5sjIFsjWCCu8y8hxi26hCEQjtRg9GaA==}
+  /express-validate-kit@0.0.6:
+    resolution: {integrity: sha512-xvONS4K0Irsvsq64VL/m0qCRxDfeb7MsdDEtwPcXtY3RP7b9bZwmeXvZpMPeLM1OFm0nZnp5/uQQP1yTXmjh7w==}
     engines: {node: '>= 18'}
     dev: false
 
@@ -3262,18 +3262,22 @@ packages:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
     dev: false
 
-  /setup-router-shared@0.1.8:
-    resolution: {integrity: sha512-ODXfX7a1Xghl4Lc+7FeVZ2CocHhnubJ7q9OvGNMzk/yVJsufA95SFq+yHJPdlHyCT/Lvb3DOSYd9r1jKwBrnKA==}
+  /setup-router-shared@0.1.10:
+    resolution: {integrity: sha512-iXGRfB/5a6w3306cBKycvdk0SCFwafItPXd+4tUauGRs5MHcxwU/cK42qy3ANVAbKx/2pp9Vz+4Bbz1PE/D0Pw==}
     dependencies:
       cli-table: 0.3.11
       fast-glob: 3.3.2
     dev: false
 
-  /setup-router@0.1.8:
-    resolution: {integrity: sha512-+BCBzFXJdrMPPQswbHM8flxeRNcgVbCjNDm5fQMk3c/coKiHaqs8k5L9vIhJxDAYVC1TcHwGhsL4sN3E73V6tA==}
+  /setup-router@0.1.10:
+    resolution: {integrity: sha512-DXMfdWTPQt9Z3yFbx1O/wG6mmcqAfQnlU11f4ifk3LfU0r7Fb19y4ITXDsLH3dUT3iEOQnaqrp8MVhsuVfeE6w==}
     dependencies:
       consola: 3.2.3
-      setup-router-shared: 0.1.8
+      setup-router-shared: 0.1.10
+    optionalDependencies:
+      express: 4.19.2
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /shebang-command@2.0.0:

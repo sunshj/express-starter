@@ -1,7 +1,7 @@
 import md5 from 'md5'
 import { exclude, prisma } from '#utils'
 
-export const findAllByPage = async (req, res) => {
+export const findAllByPage = eventHandler(async (req, res) => {
   try {
     const { page, size, query = '' } = req.query
     const result = await prisma.user.findMany({
@@ -32,9 +32,9 @@ export const findAllByPage = async (req, res) => {
   } catch (error) {
     res.$failed(error.message)
   }
-}
+})
 
-export const findById = async (req, res) => {
+export const findById = eventHandler(async (req, res) => {
   try {
     const { id } = req.params
     const user = await prisma.user.findUnique({ where: { id: Number(id) } })
@@ -43,9 +43,9 @@ export const findById = async (req, res) => {
   } catch (error) {
     res.$failed(error.message)
   }
-}
+})
 
-export const create = async (req, res) => {
+export const create = eventHandler(async (req, res) => {
   try {
     const { username, password, email } = req.body
     const existedUser = await prisma.user.findUnique({
@@ -63,4 +63,4 @@ export const create = async (req, res) => {
   } catch (error) {
     res.$failed(error.message)
   }
-}
+})
