@@ -18,8 +18,8 @@ dependencies:
     specifier: ^4.18.3
     version: 4.19.2
   express-validate-kit:
-    specifier: ^0.0.6
-    version: 0.0.6
+    specifier: ^0.0.7
+    version: 0.0.7
   joi:
     specifier: ^17.8.4
     version: 17.13.1
@@ -35,9 +35,12 @@ dependencies:
   serve-favicon:
     specifier: ^2.5.0
     version: 2.5.0
+  setup-middleware:
+    specifier: 0.2.0-beta.2
+    version: 0.2.0-beta.2
   setup-router:
-    specifier: ^0.1.10
-    version: 0.1.10
+    specifier: 0.2.0-beta.2
+    version: 0.2.0-beta.2
 
 devDependencies:
   '@sunshj/eslint-config':
@@ -1688,8 +1691,8 @@ packages:
       strip-final-newline: 3.0.0
     dev: true
 
-  /express-validate-kit@0.0.6:
-    resolution: {integrity: sha512-xvONS4K0Irsvsq64VL/m0qCRxDfeb7MsdDEtwPcXtY3RP7b9bZwmeXvZpMPeLM1OFm0nZnp5/uQQP1yTXmjh7w==}
+  /express-validate-kit@0.0.7:
+    resolution: {integrity: sha512-Oblb0qUMJzFZqJnvloz0EQID7YRzipQIcaMzgNqjm6G8mm4SYSMvVFVUZzPehhIptX9O1mA4n80sBNdAoEf9kw==}
     engines: {node: '>= 18'}
     dev: false
 
@@ -3262,18 +3265,24 @@ packages:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
     dev: false
 
-  /setup-router-shared@0.1.10:
-    resolution: {integrity: sha512-iXGRfB/5a6w3306cBKycvdk0SCFwafItPXd+4tUauGRs5MHcxwU/cK42qy3ANVAbKx/2pp9Vz+4Bbz1PE/D0Pw==}
+  /setup-middleware@0.2.0-beta.2:
+    resolution: {integrity: sha512-EXEeDbqIyPHn8zxjORUCpMqWOxTNi+uKumcxjR81lkdjRMPWBdt+FJo4cBuDOFWn1tK/tN81HawXZxTKkd/fCQ==}
+    dependencies:
+      setup-router-shared: 0.2.0-beta.2
+    dev: false
+
+  /setup-router-shared@0.2.0-beta.2:
+    resolution: {integrity: sha512-ZIH/MqmMo9lhlHYfM+naoqOVYJ5gKk84W0drh9tJvv7ta4qmxCfo6Pe3+P17bNo6wv20kWQYi6uWTYbX7OFniA==}
     dependencies:
       cli-table: 0.3.11
       fast-glob: 3.3.2
     dev: false
 
-  /setup-router@0.1.10:
-    resolution: {integrity: sha512-DXMfdWTPQt9Z3yFbx1O/wG6mmcqAfQnlU11f4ifk3LfU0r7Fb19y4ITXDsLH3dUT3iEOQnaqrp8MVhsuVfeE6w==}
+  /setup-router@0.2.0-beta.2:
+    resolution: {integrity: sha512-A8ulwHp91n6aAIlCEdMWLFD3ixzI6VC+urWnI9yrifDweli4s4CER0dMsdEcZRWsD23Qs9EusHBS98k2vRI0TA==}
     dependencies:
       consola: 3.2.3
-      setup-router-shared: 0.1.10
+      setup-router-shared: 0.2.0-beta.2
     optionalDependencies:
       express: 4.19.2
     transitivePeerDependencies:

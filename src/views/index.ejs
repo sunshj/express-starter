@@ -7,16 +7,27 @@
     <h1><%= title %></h1>
     <p><%= msg %></p>
 
+    <h3>middlewares</h3>
+    <ul id="middlewares"></ul>
+
+    <h3>routes</h3>
     <ul id="routes"></ul>
 
     <script>
+      const middlewaresEl = document.getElementById('middlewares')
       const routesEl = document.getElementById('routes')
+
       fetch('/__routes')
         .then(r => r.json())
-        .then(routes => {
+        .then(({ routes, middlewares }) => {
+          middlewaresEl.innerHTML = middlewares
+            .map(m => {
+              return `<li>${m.name} <code>${m.matcher}</code></li>`
+            })
+            .join('\n')
           routesEl.innerHTML = routes
             .map(route => {
-              return `<li>${route.method} <a href="${route.url}">${route.url}</a></li>`
+              return `<li>${route.method} <a href="${route.url}"><code>${route.url}</code></a></li>`
             })
             .join('\n')
         })
