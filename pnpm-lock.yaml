@@ -36,11 +36,11 @@ dependencies:
     specifier: ^2.5.0
     version: 2.5.0
   setup-middleware:
-    specifier: 0.2.0-beta.3
-    version: 0.2.0-beta.3
+    specifier: 0.2.0-beta.5
+    version: 0.2.0-beta.5
   setup-router:
-    specifier: 0.2.0-beta.3
-    version: 0.2.0-beta.3
+    specifier: 0.2.0-beta.5
+    version: 0.2.0-beta.5
 
 devDependencies:
   '@sunshj/eslint-config':
@@ -3265,28 +3265,28 @@ packages:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
     dev: false
 
-  /setup-middleware@0.2.0-beta.3:
-    resolution: {integrity: sha512-zoXDVCww2yHIvIH/7dFgeHbi0dR/y8rcwx8kKZGjDiJIpVHHNOF0R9VCZWHnzrA6CGvkI61gs+BQHIEms836PA==}
+  /setup-middleware@0.2.0-beta.5:
+    resolution: {integrity: sha512-7i6JcAbwFLIwuXZG+HqwVxykX6D73avVjlCqpD7Bxp4OZFxPu1Ue238sLqO71E05ZQizKze2BynjDvVilRB35A==}
     dependencies:
-      setup-router-shared: 0.2.0-beta.3
+      setup-x-shared: 0.2.0-beta.5
     dev: false
 
-  /setup-router-shared@0.2.0-beta.3:
-    resolution: {integrity: sha512-b3prTenQfIBl5I//kVh70kpGw1sFs2qeJUPnNT0xOs78+xqaxMSMjrVe3atk/RxXEsckRQKVXa3g39cnyM4Q2g==}
-    dependencies:
-      cli-table: 0.3.11
-      fast-glob: 3.3.2
-    dev: false
-
-  /setup-router@0.2.0-beta.3:
-    resolution: {integrity: sha512-a/AuTGI50oN50DUbztBofzlJ2HmAnSo5v+OKx7VHOmTnBOCmQ7B3YuXE+ypLqSoWR/LsNv7HNyCTY7AI/pPOuw==}
+  /setup-router@0.2.0-beta.5:
+    resolution: {integrity: sha512-bHQJZIVZNHFMgRVNnmKuqYvO2tNnwAMo6XnPEyhNPRZpNX3ss7FYPE3Y10AcpAvn5Ha2+H8BBySPRzAh9YoHWg==}
     dependencies:
       consola: 3.2.3
-      setup-router-shared: 0.2.0-beta.3
+      setup-x-shared: 0.2.0-beta.5
     optionalDependencies:
       express: 4.19.2
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /setup-x-shared@0.2.0-beta.5:
+    resolution: {integrity: sha512-yB/kY/cxG8Zr/RmI1tOEoVf9SlVTDcb2+GK8nMr6cSXdX/hErdnwUcxWNTLkRFz31ma9BYxVKim79vt5x0pVHA==}
+    dependencies:
+      cli-table: 0.3.11
+      fast-glob: 3.3.2
     dev: false
 
   /shebang-command@2.0.0:
