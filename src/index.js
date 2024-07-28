@@ -11,10 +11,10 @@ import { setupMiddleware } from 'setup-middleware'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
 
-const BeforeRouteMount = definePlugin(({ app, middlewares }) => {
+const beforeRouteMount = definePlugin(({ app, middlewares }) => {
   return {
     id: 'before-route-mount',
-    extendRoutes(ctx, routes) {
+    extendRoutes(_, routes) {
       app.get(
         '/__routes',
         eventHandler(() => ({
@@ -30,7 +30,7 @@ async function main() {
   // middlewares
   const middlewares = await setupMiddleware({
     directory: path.join(__dirname, './middlewares'),
-    use: (matcher, handler) => app.all(matcher, handler),
+    register: (matcher, handler) => app.all(matcher, handler),
     logger: true
   })
 
@@ -50,7 +50,7 @@ async function main() {
     directory: path.join(__dirname, './app'),
     dotNesting: true,
     plugins: [
-      BeforeRouteMount({ app, middlewares }),
+      beforeRouteMount({ app, middlewares }),
       presetExpress(app, {
         prefixes: {
           '/api': ['src/app/user/**']
