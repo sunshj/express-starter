@@ -1,3 +1,4 @@
+// @ts-check
 import 'dotenv/config'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -29,7 +30,7 @@ const beforeRouteMount = definePlugin(({ app, middlewares }) => {
 async function main() {
   // middlewares
   const middlewares = await setupMiddleware({
-    directory: path.join(__dirname, './middlewares'),
+    directory: path.join(__dirname, 'middlewares'),
     register: (matcher, handler) => app.all(matcher, handler),
     logger: true
   })
@@ -47,7 +48,7 @@ async function main() {
   app.use(express.static(path.join(process.cwd(), '/public')))
 
   await setupRouter({
-    directory: path.join(__dirname, './app'),
+    directory: path.join(__dirname, 'app'),
     dotNesting: true,
     plugins: [
       beforeRouteMount({ app, middlewares }),
