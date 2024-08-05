@@ -36,11 +36,11 @@ dependencies:
     specifier: ^2.5.0
     version: 2.5.0
   setup-middleware:
-    specifier: 0.2.0-beta.7
-    version: 0.2.0-beta.7
+    specifier: 0.2.0-beta.8
+    version: 0.2.0-beta.8
   setup-router:
-    specifier: 0.2.0-beta.7
-    version: 0.2.0-beta.7
+    specifier: 0.2.0-beta.8
+    version: 0.2.0-beta.8
 
 devDependencies:
   '@sunshj/eslint-config':
@@ -3265,25 +3265,25 @@ packages:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
     dev: false
 
-  /setup-middleware@0.2.0-beta.7:
-    resolution: {integrity: sha512-KahOmNtNn+30SvfWHSD6gwq18/D3ivSrfcu7I9IWsqIG9WbCZeT4bubf+hXWUDeHue90HCRo1Hym/80E1tN+Yw==}
+  /setup-middleware@0.2.0-beta.8:
+    resolution: {integrity: sha512-U912QSnehnQcbJ/d4uUFCPoidNXtwu3cgxUPgbkfG/7BMBI/Vy5qX9FfFsILuRoHz0vJcH4SQrvF1zzA04Dahg==}
     dependencies:
-      setup-x-shared: 0.2.0-beta.7
+      setup-x-shared: 0.2.0-beta.8
     dev: false
 
-  /setup-router@0.2.0-beta.7:
-    resolution: {integrity: sha512-F8hg8AQ8vPbIARN9fMwPnumJOGKfXw0xiqyxwEeqm7NmckZ1fHXzsDAQiUJQHRwSSk5ok7B8RzLTN3rImTfUKg==}
+  /setup-router@0.2.0-beta.8:
+    resolution: {integrity: sha512-IErCgzmperdCbM43AuBpdWbtug7EcfwKWt96GpKnNHcM0xO+Ww9WR5yX5egKFARIcNnbBdKi1NraaJw+nj8diQ==}
     dependencies:
       consola: 3.2.3
-      setup-x-shared: 0.2.0-beta.7
+      setup-x-shared: 0.2.0-beta.8
     optionalDependencies:
       express: 4.19.2
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /setup-x-shared@0.2.0-beta.7:
-    resolution: {integrity: sha512-MmjgrvoHlNsLI4ykSBAJNvu4mSd+u1Sfs///QPmfwvBzLvrrx+5v27SLjrThSfVypBf3aOM7Rb2s1qo1RAGQMA==}
+  /setup-x-shared@0.2.0-beta.8:
+    resolution: {integrity: sha512-lsTd3bjzeZsL1ipsoT7Tx+hN+gtyG/sj2HoyI+rvZ1blC5GbW+B03++EShZsTRTcq8umz7IK0Ygus1qmjKf57Q==}
     dependencies:
       cli-table: 0.3.11
       fast-glob: 3.3.2

@@ -4,28 +4,13 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import express from 'express'
 import favicon from 'serve-favicon'
-import { definePlugin, setupRouter } from 'setup-router'
+import { setupRouter } from 'setup-router'
 import { presetExpress } from 'setup-router/preset-express'
 import logger from 'morgan'
 import { setupMiddleware } from 'setup-middleware'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
-
-const beforeRouteMount = definePlugin(({ app, middlewares }) => {
-  return {
-    id: 'before-route-mount',
-    extendRoutes(_, routes) {
-      app.get(
-        '/__routes',
-        eventHandler(() => ({
-          routes,
-          middlewares: middlewares.map(v => ({ ...v, matcher: v.matcher.toString() }))
-        }))
-      )
-    }
-  }
-})
 
 async function main() {
   // middlewares
@@ -51,13 +36,23 @@ async function main() {
     directory: path.join(__dirname, 'app'),
     dotNesting: true,
     plugins: [
-      beforeRouteMount({ app, middlewares }),
       presetExpress(app, {
         prefixes: {
           '/api': ['src/app/user/**']
         },
         logger: {
           baseUrl: `http://127.0.0.1:${app.get('port')}`
+        },
+        register: {
+          beforeMount(routes) {
+            app.get(
+              '/__routes',
+              eventHandler(() => ({
+                routes,
+                middlewares: middlewares.map(v => ({ ...v, matcher: v.matcher.toString() }))
+              }))
+            )
+          }
         }
       })
     ]
