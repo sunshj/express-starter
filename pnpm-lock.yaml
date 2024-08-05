@@ -18,8 +18,8 @@ dependencies:
     specifier: ^4.18.3
     version: 4.19.2
   express-validate-kit:
-    specifier: ^0.0.7
-    version: 0.0.7
+    specifier: ^0.1.1
+    version: 0.1.1
   joi:
     specifier: ^17.8.4
     version: 17.13.1
@@ -1691,8 +1691,8 @@ packages:
       strip-final-newline: 3.0.0
     dev: true
 
-  /express-validate-kit@0.0.7:
-    resolution: {integrity: sha512-Oblb0qUMJzFZqJnvloz0EQID7YRzipQIcaMzgNqjm6G8mm4SYSMvVFVUZzPehhIptX9O1mA4n80sBNdAoEf9kw==}
+  /express-validate-kit@0.1.1:
+    resolution: {integrity: sha512-ihRG34h4y+GVCrYz7enweqV2gpNdnuI33JwTCvDac2LW8qjMhyWgDyOx3cBX6E7YHDfLMK/rXVCUkcQTFoIOtQ==}
     engines: {node: '>= 18'}
     dev: false
 
